@@ -37,7 +37,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Interact()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.Space))
         {
 
             #region RayCast

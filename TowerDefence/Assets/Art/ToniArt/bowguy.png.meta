@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 656c2dccdba01b64883a5dc5600c16b3
+guid: 7090b49d010643a4dbd01facca031c3a
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 64
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -110,88 +110,43 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: places_0
+      name: groundTiles_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 64
-        height: 64
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 0, y: -32}
-        - {x: 32, y: 0}
-        - {x: 0, y: 32}
-        - {x: -32, y: 0}
-      physicsShape:
-      - - {x: 0, y: -32}
-        - {x: 32, y: 0}
-        - {x: 0, y: 32}
-        - {x: -32, y: 0}
+      outline: []
+      physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 385ad8dce1dd83445bfce461e59494fa
-      internalID: 388996558
+      spriteID: 0469a938cc06300409ab4373a5081539
+      internalID: -1569249978
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: places_1
+      name: groundTiles_1
       rect:
         serializedVersion: 2
-        x: 64
+        x: 32
         y: 0
-        width: 64
-        height: 64
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 0, y: -32}
-        - {x: 32, y: 0}
-        - {x: 0, y: 32}
-        - {x: -32, y: 0}
-      physicsShape:
-      - - {x: 0, y: -32}
-        - {x: 32, y: 0}
-        - {x: 0, y: 32}
-        - {x: -32, y: 0}
+      outline: []
+      physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cc79a58b04c4f874d8839b65352dd440
-      internalID: -1612905282
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: places_2
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 0, y: -32}
-        - {x: 32, y: 0}
-        - {x: 0, y: 32}
-        - {x: -32, y: 0}
-      physicsShape:
-      - - {x: 0, y: -32}
-        - {x: 32, y: 0}
-        - {x: 0, y: 32}
-        - {x: -32, y: 0}
-      tessellationDetail: 0
-      bones: []
-      spriteID: 38e0da4b481aaf74ba907d7b006873a4
-      internalID: 1995193980
+      spriteID: d68813c1c59255042bf02c5dc0a00867
+      internalID: -1951049845
       vertices: []
       indices: 
       edges: []
@@ -207,9 +162,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      places_0: 388996558
-      places_1: -1612905282
-      places_2: 1995193980
+      groundTiles_0: -1569249978
+      groundTiles_1: -1951049845
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
