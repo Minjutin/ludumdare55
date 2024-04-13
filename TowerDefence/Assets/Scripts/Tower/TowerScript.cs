@@ -33,6 +33,7 @@ public class TowerScript : MonoBehaviour
         {
             GameObject clone;
             clone = Instantiate(prefab, transform.position, transform.rotation);
+            clone.transform.parent = TowerManager.instance.bulletMother.transform;
             clone.GetComponent<BulletScript>().target = enemies[0];
 
             cooldownTimer = shootEveryInterval;
@@ -45,7 +46,7 @@ public class TowerScript : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.tag == "Player")
+        if(collision.gameObject.tag == "Enemy")
         {
             enemies.Add(collision.gameObject);
         }
@@ -53,7 +54,7 @@ public class TowerScript : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Enemy")
         {
             enemies.Remove(collision.gameObject);
         }

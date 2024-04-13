@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class TowerManager : MonoBehaviour
 {
+    public static TowerManager instance;
     public Sprite ranged, dmg, aoe, boost;
+    public GameObject bulletMother;
 
-    // Update is called once per frame
-    void Update()
+    private void Awake()
     {
-        
+        instance = this;
     }
 }

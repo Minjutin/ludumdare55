@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyManager : MonoBehaviour
 {
     public static EnemyManager instance;
-    public GameObject enemy;
+    public GameObject enemy, enemyMother;
 
     void Awake()
     {
@@ -14,6 +14,7 @@ public class EnemyManager : MonoBehaviour
     
     public void SpawnEnemies()
     {
-        Instantiate(enemy, TileManager.instance.tilePath[0].posReal, Quaternion.identity);
+        GameObject e = Instantiate(enemy, TileManager.instance.tilePath[0].posReal, Quaternion.identity);
+        e.transform.parent = enemyMother.transform;
     }
 }

@@ -21,8 +21,8 @@ public class BulletScript : MonoBehaviour
 
         if (Vector3.Distance(transform.position, target.transform.position) < 0.1f)
         {
-            //Destroy everything?
-
+            Destroy(gameObject);
+            //TODO HP CALCULATION
         }
     }
 }
