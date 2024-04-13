@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class Tower : MonoBehaviour
 {
-    float damage, range;
+    float damage, range, aoe, boost;
 
     // Update is called once per frame
-    void Update()
+    void InitializeTower()
     {
         
     }

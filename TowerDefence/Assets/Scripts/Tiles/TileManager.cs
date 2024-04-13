@@ -37,7 +37,7 @@ public class TileManager : MonoBehaviour
         CreateTiles();
         CreatePath();
 
-        Debug.Log(tilePath.Count);
+        //Debug.Log(tilePath.Count);
 
         //foreach(TileStatus i in tilePath)
         //{
