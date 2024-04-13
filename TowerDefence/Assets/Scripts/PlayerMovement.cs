@@ -7,10 +7,11 @@ public class PlayerMovement : MonoBehaviour
 {
     private Rigidbody2D rb;
     public float speed = 1;
-
     public float rotationSpeed = 5f;
-    Vector3 movementDirection;
+    private Vector3 movementDirection;
+
     public float rayLength;
+
 
     // Start is called before the first frame update
     void Start()
@@ -42,13 +43,33 @@ public class PlayerMovement : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
+
             RaycastHit2D hit = Physics2D.Raycast(transform.position, movementDirection, rayLength);
-            Debug.DrawRay(transform.position, movementDirection * rayLength, color:Color.red,1f);
+            Debug.DrawRay(transform.position, movementDirection * rayLength, color: Color.red, 1f);
+
+            if (hit.rigidbody != null)
+            {
+                //Debug.Log(hit.rigidbody.name);
+
+                if (hit.rigidbody.CompareTag("Resource"))
+                {
+                    //Debug.Log("Res");
+
+                }
+                else if (hit.rigidbody.CompareTag("Building"))
+                {
+                    //Debug.Log("Build");
+
+                }
+                
+
+            }
         }
 
 
 
     }
+
 
 
     private void FaceMovementDir()
