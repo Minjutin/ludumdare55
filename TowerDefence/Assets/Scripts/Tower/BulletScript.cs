@@ -42,7 +42,9 @@ public class BulletScript : MonoBehaviour
                 }
 
                 gameObject.GetComponent<BoxCollider2D>().enabled = false;
-                target.GetComponent<Enemy>().TakeHp(dmg);
+                if(AOE == 0)
+                    target.GetComponent<Enemy>().TakeHp(dmg);
+
                 gameObject.GetComponent<SpriteRenderer>().color = new Color(0,0,0,0);
 
             }
