@@ -6,6 +6,7 @@ public class TowerScript : MonoBehaviour
 {
     public GameObject prefab;
     public List<GameObject> enemies = new List<GameObject>();
+    public TileStatus tile;
 
     public bool isInited = false;
 
@@ -19,6 +20,12 @@ public class TowerScript : MonoBehaviour
         dmg = _dmg; range = _range; aoe = _aoe; boost = _boost;
         GetComponent<CircleCollider2D>().radius = range/2;
 
+        if(dmg == 0 && range == 0 && aoe == 0 && boost == 0)
+        {
+            this.gameObject.SetActive(false);
+            return;
+        }
+
         //SET SPRITE
         if (dmg>range && dmg > aoe && dmg>boost)
             GetComponent<SpriteRenderer>().sprite = TowerManager.instance.dmg;
@@ -30,6 +37,7 @@ public class TowerScript : MonoBehaviour
             GetComponent<SpriteRenderer>().sprite = TowerManager.instance.boost;
 
         isInited = true;
+        tile.isEmpty = true;
     }
 
     void Update()
