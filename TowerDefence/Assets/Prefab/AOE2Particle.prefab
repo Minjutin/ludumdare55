@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1842819438085194907}
   - component: {fileID: 1831147408399304059}
   m_Layer: 0
-  m_Name: AOEParticle
+  m_Name: AOE2Particle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
