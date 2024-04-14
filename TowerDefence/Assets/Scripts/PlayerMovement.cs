@@ -12,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
 
     public float rayLength;
 
+    public GameObject current;
 
     // Start is called before the first frame update
     void Start()
@@ -32,7 +33,6 @@ public class PlayerMovement : MonoBehaviour
             FaceMovementDir();
             Interact();
 
-            Interact();
         }
         else
         {
@@ -48,29 +48,37 @@ public class PlayerMovement : MonoBehaviour
         {
 
             #region RayCast
-            RaycastHit2D hit = Physics2D.Raycast(transform.position, movementDirection, rayLength);
-            Debug.DrawRay(transform.position, movementDirection * rayLength, color: Color.red, 1f);
+            //RaycastHit2D hit = Physics2D.Raycast(transform.position, movementDirection, rayLength);
+            //Debug.DrawRay(transform.position, movementDirection * rayLength, color: Color.red, 1f);
 
-            if (hit.rigidbody != null)
+            //if (hit.rigidbody != null)
+            //{
+            //    //Debug.Log(hit.rigidbody.name);
+
+  
+
+
+            //}
+            #endregion
+
+            if (current)
             {
-                //Debug.Log(hit.rigidbody.name);
-
-                if (hit.rigidbody.CompareTag("Interactable"))
+                Debug.Log(current.tag);
+                if (current.CompareTag("Interactable"))
                 {
-                    //Debug.Log("Res");
-                    if (hit.rigidbody.GetComponent<ResourceDropper>())
+
+                    if (current.GetComponent<ResourceDropper>())
                     {
-                        hit.rigidbody.GetComponent<ResourceDropper>().DropResources();
+                        current.GetComponent<ResourceDropper>().DropResources();
                     }
                 }
 
-                if (hit.transform.gameObject.GetComponent<TowerScript>() && !hit.transform.gameObject.GetComponent<TowerScript>().isInited)
-                {
-                    MainCanvas.instance.StartSummoning(hit.transform.gameObject.GetComponent<TowerScript>());
-                }
-                
+
+                if (current.GetComponent<TowerScript>() && !current.GetComponent<TowerScript>().isInited)
+                    {
+                    MainCanvas.instance.StartSummoning(current.GetComponent<TowerScript>());
+                    }
             }
-            #endregion
         }
 
 
@@ -94,11 +102,20 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.GetComponent<Resource>())
         {
             collision.GetComponent<Resource>().Collect();
         }
+        if (collision.gameObject.GetComponent<TowerScript>() || collision.gameObject.CompareTag("Interactable"))
+        {
+            current = collision.gameObject;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        current = null;
     }
 }

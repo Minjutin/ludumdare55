@@ -28,6 +28,7 @@ public class TowerManager : MonoBehaviour
         {
             GameObject tow = Instantiate(defTower, willSpawn.posReal, Quaternion.identity);
             tow.transform.parent = towerMother.transform;
+            //tow.GetComponent<TowerScript>().InitTower(2,4,5,6);
             willSpawn.isEmpty = false;
         }
 

@@ -18,6 +18,17 @@ public class TowerScript : MonoBehaviour
     {
         dmg = _dmg; range = _range; aoe = _aoe; boost = _boost;
         GetComponent<CircleCollider2D>().radius = range/2;
+
+        //SET SPRITE
+        if (dmg>range && dmg > aoe && dmg>boost)
+            GetComponent<SpriteRenderer>().sprite = TowerManager.instance.dmg;
+        else if (range>aoe && range > boost)
+           GetComponent<SpriteRenderer>().sprite = TowerManager.instance.ranged;
+        else if (aoe > boost)
+            GetComponent<SpriteRenderer>().sprite = TowerManager.instance.aoe;
+        else
+            GetComponent<SpriteRenderer>().sprite = TowerManager.instance.boost;
+
         isInited = true;
     }
 
