@@ -15,7 +15,6 @@ public class TileManager : MonoBehaviour
 
     //IMPORTANT! All tiles in one array.
     public Dictionary<Vector2, TileStatus> tiles = new();
-    public List<TileStatus> tilePath = new();
 
     public GameObject test;
 
@@ -116,17 +115,23 @@ public class TileManager : MonoBehaviour
     }
 
 
-    public void CreatePath()
+    public List<TileStatus> CreatePath()
     {
+        List<TileStatus> tilePath = new();
+
+        List<TileStatus> startTiles = new();
 
         //Create a path
         foreach (TileStatus i in tiles.Values)
         {
             if (i.isFirst)
             {
-                tilePath.Add(i);
+                startTiles.Add(i);
             }
         }
+
+        int start = Random.Range(0, startTiles.Count);
+        tilePath.Add(startTiles[start]);
 
         if (tilePath.Count < 1)
         {
@@ -142,22 +147,30 @@ public class TileManager : MonoBehaviour
             TileStatus nextTile = null;
             TileStatus previousTile = currentTile;
 
+            List<TileStatus> possibleTiles = new();
+
             //Get previous tile
             if (tilePath.Count > 1) { 
                 previousTile = tilePath[tilePath.Count - 2];
             }
 
-            Vector2Int[] aroundTiles = { currentTile.posInArray + new Vector2Int(1, 0), currentTile.posInArray + new Vector2Int(-1, 0), currentTile.posInArray + new Vector2Int(0, 1), currentTile.posInArray + new Vector2Int(0, -1) };
+            Vector2Int[] aroundTiles = { currentTile.posInArray + new Vector2Int(1, 0), currentTile.posInArray + new Vector2Int(0, 1), currentTile.posInArray + new Vector2Int(0, -1) };
 
             foreach (Vector2Int i in aroundTiles)
             {
           
                 if (tiles.ContainsKey(i) && i != previousTile.posInArray && tiles[i].isPath)
                 {
-                    tilePath.Add(tiles[i]);
-                    break;
+                    possibleTiles.Add(tiles[i]);
                 }
             }
+
+            if (possibleTiles.Count > 0)
+            {
+                int rand = Random.Range(0, possibleTiles.Count);
+                tilePath.Add(possibleTiles[rand]);
+            }
+
 
 
             if (nextTile != null)
@@ -174,6 +187,7 @@ public class TileManager : MonoBehaviour
                 break;
             }
         }
+        return tilePath;
     }
 
     //Ädd tile to a list if it can be found. If not, skip it

@@ -30,7 +30,7 @@ public class EnemyManager : MonoBehaviour
         if (t > enemySpawnTime)
         {
             t = 0;
-            GameObject e = Instantiate(enemy, TileManager.instance.tilePath[0].posReal, Quaternion.identity);
+            GameObject e = Instantiate(enemy, new Vector2(-10,0.6f), Quaternion.identity);
             e.transform.parent = enemyMother.transform;
         }
 

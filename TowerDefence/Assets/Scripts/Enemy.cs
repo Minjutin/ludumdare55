@@ -12,12 +12,15 @@ public class Enemy : MonoBehaviour
     float t = 0;
     float moveTime = 1f;
 
+    List<TileStatus> tilePath;
+
     Resource.Type type;
 
     private void Start()
     {
-        currentTile = TileManager.instance.tilePath[pathIndicator];
-        nextTile = TileManager.instance.tilePath[pathIndicator+1];
+        tilePath = TileManager.instance.CreatePath();
+        currentTile = tilePath[pathIndicator];
+        nextTile = tilePath[pathIndicator+1];
 
         InitEnemy();
     }
@@ -63,7 +66,7 @@ public class Enemy : MonoBehaviour
             }
             else
             {
-                nextTile = TileManager.instance.tilePath[pathIndicator + 1];
+                nextTile = tilePath[pathIndicator + 1];
             }
         }
 
