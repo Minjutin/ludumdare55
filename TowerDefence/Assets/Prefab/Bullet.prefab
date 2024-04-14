@@ -147,8 +147,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   dmg: 1
+  AOE: 0
   target: {fileID: 0}
-  isAOE: 0
   AOETargets: []
 --- !u!58 &8334140991633932772
 CircleCollider2D:
@@ -184,7 +184,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 5
+  m_Radius: 1
 --- !u!1001 &3928464225262596395
 PrefabInstance:
   m_ObjectHideFlags: 0

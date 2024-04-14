@@ -7,11 +7,17 @@ public class BulletScript : MonoBehaviour
     public float speed = 5f;
     public float dmg = 1f;
 
-    public bool isAOE;
+    public int AOE = 0;
 
     public GameObject target;
     public List<Enemy> AOETargets = new List<Enemy>();
 
+
+    private void Start()
+    {
+        gameObject.GetComponent<CircleCollider2D>().radius = AOE;
+        Debug.Log(this.gameObject.name + " Has collider sized: " + AOE);
+    }
 
     // Update is called once per frame
     void Update()
@@ -25,7 +31,7 @@ public class BulletScript : MonoBehaviour
             if (Vector3.Distance(transform.position, target.transform.position) < 0.001f)
             {
 
-                if (isAOE)
+                if (AOE > 0)
                 {
                     gameObject.GetComponentInChildren<ParticleSystem>().Play();
 
