@@ -7,14 +7,12 @@ public class TowerScript : MonoBehaviour
     public GameObject prefab;
     public List<GameObject> enemies = new List<GameObject>();
 
+
+    int dmg, range, aoe, boost;
+
     public float shootEveryInterval = 2.0f; 
     private float cooldownTimer = 0.0f;
     public float scanArea;
-
-    void Start()
-    {
-
-    }
 
     void Update()
     {

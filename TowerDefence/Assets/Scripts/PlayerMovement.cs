@@ -86,7 +86,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (collision.GetComponent<Resource>())
         {
-            Destroy(collision.gameObject);
+            collision.GetComponent<Resource>().Collect();
         }
     }
 }

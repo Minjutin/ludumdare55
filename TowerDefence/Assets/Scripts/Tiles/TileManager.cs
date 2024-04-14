@@ -1,6 +1,7 @@
 using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Unity.IO.LowLevel.Unsafe;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -78,6 +79,7 @@ public class TileManager : MonoBehaviour
         if (groundTiles.tiles[x, y].tileType && groundTiles.tiles[x, y].tileType.name.ToLower().Contains("path"))
         {
             tile.isPath = true;
+            tile.isEmpty = false;
         }
         if(indicatorTiles.tiles[x, y].tileType && indicatorTiles.tiles[x, y].tileType.name.ToLower().Contains("start"))
         {
@@ -86,6 +88,10 @@ public class TileManager : MonoBehaviour
         if (indicatorTiles.tiles[x, y].tileType && indicatorTiles.tiles[x, y].tileType.name.ToLower().Contains("finish"))
         {
             tile.isLast = true;
+        }
+        if (indicatorTiles.tiles[x, y].tileType && indicatorTiles.tiles[x, y].tileType.name.ToLower().Contains("full"))
+        {
+            tile.isEmpty = false;
         }
 
         //-----------------------------------------
@@ -177,6 +183,20 @@ public class TileManager : MonoBehaviour
         {
             tileList.Add(GetTile(location));
         }
+    }
+
+    public TileStatus GetEmptyTile()
+    {
+        List<TileStatus> emptyTiles = new();
+        foreach(TileStatus i in tiles.Values.Where(x=>x.isEmpty).ToList())
+        {
+            emptyTiles.Add(i);
+        }
+
+        if(emptyTiles.Count < 1) { return null; }
+
+        int rnd = Random.Range(0, emptyTiles.Count);
+        return emptyTiles[rnd];
     }
     #endregion
 }

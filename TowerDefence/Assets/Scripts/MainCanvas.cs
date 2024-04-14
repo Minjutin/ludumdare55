@@ -4,12 +4,17 @@ using UnityEngine;
 
 public class MainCanvas : MonoBehaviour
 {
+    public static MainCanvas instance;
     public TMPro.TextMeshProUGUI resources;
 
+    private void Awake()
+    {
+        instance = this;
+    }
 
     // Update is called once per frame
-    void Update()
+    public void UpdateText()
     {
-        resources.text = "Meat: " + GameManager.instance.meats + "\r\nBones: " + GameManager.instance.bones + "\r\nPotions: " + GameManager.instance.potions + "\r\nPlutonium: " + GameManager.instance.plutoniums;
+        resources.text = "Meat: " + GameManager.instance.resAmount[Resource.Type.Meat] + "\r\nBones: " + GameManager.instance.resAmount[Resource.Type.Bone] + "\r\nPotions: " + GameManager.instance.resAmount[Resource.Type.Potion] + "\r\nPlutonium: " + GameManager.instance.resAmount[Resource.Type.Plutonium];
     }
 }

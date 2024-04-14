@@ -10,7 +10,8 @@ public class Resource : MonoBehaviour
 
     public void InitThis(Type resource)
     {
-        switch (resource)
+        type = resource;
+        switch (type)
         {
             case Resource.Type.Meat:
                 GetComponent<SpriteRenderer>().sprite = GameManager.instance.resMeat;
@@ -27,5 +28,13 @@ public class Resource : MonoBehaviour
             default:
                 break;
         }
+    }
+
+    public void Collect()
+    {
+        GameManager.instance.resAmount[type]++;
+        MainCanvas.instance.UpdateText();
+
+        Destroy(gameObject);
     }
 }

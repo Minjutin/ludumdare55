@@ -5,13 +5,9 @@ using UnityEngine;
 public class BulletScript : MonoBehaviour
 {
     public float speed = 5f;
+    public float dmg = 1f;
     public GameObject target;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
 
     // Update is called once per frame
     void Update()

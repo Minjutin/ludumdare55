@@ -36,7 +36,7 @@ public class ResourceDropper : MonoBehaviour
     {
         int deg = Random.Range(0, 360);
         Vector3 dir = (Quaternion.Euler(0f, 0f, deg) * new Vector2(0, 1)).normalized;
-        GameObject resource = Instantiate(dropped, this.transform.position+dir, Quaternion.identity);
+        GameObject resource = Instantiate(dropped, (this.transform.position+dir)*distance, Quaternion.identity);
         resource.transform.parent = GameManager.instance.resourceMother.transform;
         resource.GetComponent<Resource>().InitThis(resType);
     }
