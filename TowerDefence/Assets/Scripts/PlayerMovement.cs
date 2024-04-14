@@ -22,16 +22,23 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!MainCanvas.instance.SummonMenu.activeSelf)
+        {
+            float moveHorizontal = Input.GetAxis("Horizontal");
+            float moveVertical = Input.GetAxis("Vertical");
 
-        float moveHorizontal = Input.GetAxis("Horizontal");
-        float moveVertical = Input.GetAxis("Vertical");
+            rb.velocity = new Vector2(moveHorizontal * speed, moveVertical * speed);
 
-        rb.velocity = new Vector2(moveHorizontal * speed, moveVertical * speed);
+            FaceMovementDir();
+            Interact();
 
-        FaceMovementDir();
-        Interact();
-
-        Interact();
+            Interact();
+        }
+        else
+        {
+            rb.velocity = Vector3.zero; 
+        }
+   
     }
 
 

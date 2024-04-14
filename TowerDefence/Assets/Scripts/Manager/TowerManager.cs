@@ -7,7 +7,7 @@ public class TowerManager : MonoBehaviour
     public static TowerManager instance;
     public Sprite empty, ranged, dmg, aoe, boost;
 
-    public GameObject bulletMother;
+    public GameObject bulletMother, towerMother;
 
     public GameObject defTower;
 
@@ -26,7 +26,8 @@ public class TowerManager : MonoBehaviour
         TileStatus willSpawn = TileManager.instance.GetEmptyTile();
         if (willSpawn != null)
         {
-            Instantiate(defTower, willSpawn.posReal, Quaternion.identity);
+            GameObject tow = Instantiate(defTower, willSpawn.posReal, Quaternion.identity);
+            tow.transform.parent = towerMother.transform;
             willSpawn.isEmpty = false;
         }
 
