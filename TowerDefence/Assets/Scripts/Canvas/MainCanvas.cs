@@ -22,6 +22,7 @@ public class MainCanvas : MonoBehaviour
 
     public void StartSummoning(TowerScript tower)
     {
+        SummonMenu.GetComponent<SummonMenu>().cTower = tower;
         SummonMenu.SetActive(true);
     }
 }
