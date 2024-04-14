@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5946547939716453365}
   - component: {fileID: 1130179901957431380}
   - component: {fileID: 1716765027782887381}
+  - component: {fileID: 2511999794188465093}
   m_Layer: 5
   m_Name: TowerBase
   m_TagString: Untagged
@@ -100,8 +101,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 3693593749491018036, guid: 3bf28de31d0e59741b73324174a965df, type: 3}
   enemies: []
+  isInited: 0
   shootEveryInterval: 2
-  scanArea: 2.5
 --- !u!58 &1716765027782887381
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -136,4 +137,31 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 2
+  m_Radius: 0.0001
+--- !u!50 &2511999794188465093
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7598617757039992818}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7

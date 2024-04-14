@@ -56,6 +56,11 @@ public class PlayerMovement : MonoBehaviour
                         hit.rigidbody.GetComponent<ResourceDropper>().DropResources();
                     }
                 }
+
+                if (hit.transform.gameObject.GetComponent<TowerScript>() && !hit.transform.gameObject.GetComponent<TowerScript>().isInited)
+                {
+                    MainCanvas.instance.StartSummoning(hit.transform.gameObject.GetComponent<TowerScript>());
+                }
                 
             }
             #endregion
