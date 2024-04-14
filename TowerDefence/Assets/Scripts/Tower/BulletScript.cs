@@ -8,6 +8,7 @@ public class BulletScript : MonoBehaviour
     public float dmg = 1f;
     public GameObject target;
     public bool isAOE;
+    public List<Enemy> AOETargets = new List<Enemy>();
 
 
     // Update is called once per frame
@@ -21,9 +22,21 @@ public class BulletScript : MonoBehaviour
 
             if (Vector3.Distance(transform.position, target.transform.position) < 0.001f)
             {
+                isAOE = true;
+
                 if (isAOE)
+                {
                     gameObject.GetComponentInChildren<ParticleSystem>().Play();
 
+                    if(AOETargets != null)
+                        foreach (var Enemy in AOETargets)
+                            Enemy.GetComponent<Enemy>().TakeHp(dmg);
+
+                    
+
+                }
+
+                gameObject.GetComponent<BoxCollider2D>().enabled = false;
                 target.GetComponent<Enemy>().TakeHp(dmg);
                 gameObject.GetComponent<SpriteRenderer>().color = new Color(0,0,0,0);
 
@@ -34,4 +47,14 @@ public class BulletScript : MonoBehaviour
             gameObject.GetComponent<SpriteRenderer>().color = new Color(0, 0, 0, 0);
         
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Enemy")
+        {
+            AOETargets.Add(collision.gameObject.GetComponent<Enemy>());
+        }
+    }
+
+
 }
