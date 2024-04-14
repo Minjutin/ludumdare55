@@ -16,7 +16,7 @@ public class BulletScript : MonoBehaviour
     private void Start()
     {
         gameObject.GetComponent<CircleCollider2D>().radius = AOE;
-        Debug.Log(this.gameObject.name + " Has collider sized: " + AOE);
+        //Debug.Log(this.gameObject.name + " Has collider sized: " + AOE);
     }
 
     // Update is called once per frame
@@ -24,7 +24,6 @@ public class BulletScript : MonoBehaviour
     {
         if (target)
         {
-
             var step = speed * Time.deltaTime;
             transform.position = Vector3.MoveTowards(transform.position, target.transform.position, step);
 
@@ -42,11 +41,12 @@ public class BulletScript : MonoBehaviour
                 }
 
                 gameObject.GetComponent<BoxCollider2D>().enabled = false;
-                if(AOE == 0)
+                gameObject.GetComponent<SpriteRenderer>().color = new Color(0, 0, 0, 0);
+
+                if (AOE == 0)
                     target.GetComponent<Enemy>().TakeHp(dmg);
 
-                gameObject.GetComponent<SpriteRenderer>().color = new Color(0,0,0,0);
-
+                target = null;
             }
         }
 
