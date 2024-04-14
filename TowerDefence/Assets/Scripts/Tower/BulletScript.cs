@@ -12,13 +12,21 @@ public class BulletScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        var step = speed * Time.deltaTime; 
-        transform.position = Vector3.MoveTowards(transform.position, target.transform.position, step);
+        if (target)
+        {
+            var step = speed * Time.deltaTime;
+            transform.position = Vector3.MoveTowards(transform.position, target.transform.position, step);
 
-        if (Vector3.Distance(transform.position, target.transform.position) < 0.1f)
+            if (Vector3.Distance(transform.position, target.transform.position) < 0.1f)
+            {
+                Destroy(gameObject);
+                //TODO HP CALCULATION
+            }
+        }
+        else
         {
             Destroy(gameObject);
-            //TODO HP CALCULATION
         }
+   
     }
 }

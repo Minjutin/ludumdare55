@@ -6,13 +6,39 @@ public class TowerScript : MonoBehaviour
 {
     public GameObject prefab;
     public List<GameObject> enemies = new List<GameObject>();
+    public TileStatus tile;
 
+    public bool isInited = false;
 
-    int dmg, range, aoe, boost;
+    int dmg, range, aoe, boost; //ints
 
     public float shootEveryInterval = 2.0f; 
     private float cooldownTimer = 0.0f;
-    public float scanArea;
+
+    public void InitTower(int _dmg, int _range, int _aoe, int _boost)
+    {
+        dmg = _dmg; range = _range; aoe = _aoe; boost = _boost;
+        GetComponent<CircleCollider2D>().radius = range/2;
+
+        if(dmg == 0 && range == 0 && aoe == 0 && boost == 0)
+        {
+            this.gameObject.SetActive(false);
+            return;
+        }
+
+        //SET SPRITE
+        if (dmg>range && dmg > aoe && dmg>boost)
+            GetComponent<SpriteRenderer>().sprite = TowerManager.instance.dmg;
+        else if (range>aoe && range > boost)
+           GetComponent<SpriteRenderer>().sprite = TowerManager.instance.ranged;
+        else if (aoe > boost)
+            GetComponent<SpriteRenderer>().sprite = TowerManager.instance.aoe;
+        else
+            GetComponent<SpriteRenderer>().sprite = TowerManager.instance.boost;
+
+        isInited = true;
+        tile.isEmpty = true;
+    }
 
     void Update()
     {
@@ -33,6 +59,7 @@ public class TowerScript : MonoBehaviour
             clone = Instantiate(prefab, transform.position, transform.rotation);
             clone.transform.parent = TowerManager.instance.bulletMother.transform;
             clone.GetComponent<BulletScript>().target = enemies[0];
+            clone.GetComponent<BulletScript>().dmg = dmg;
 
             cooldownTimer = shootEveryInterval;
             Destroy(clone, 3f);
