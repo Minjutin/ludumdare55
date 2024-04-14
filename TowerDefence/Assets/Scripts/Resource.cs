@@ -30,6 +30,11 @@ public class Resource : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        Destroy(gameObject, 8f);
+    }
+
     public void Collect()
     {
         GameManager.instance.resAmount[type]++;
@@ -37,4 +42,5 @@ public class Resource : MonoBehaviour
 
         Destroy(gameObject);
     }
+
 }

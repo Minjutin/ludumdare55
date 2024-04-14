@@ -147,6 +147,7 @@ MonoBehaviour:
   speed: 5
   dmg: 1
   target: {fileID: 0}
+  isAOE: 0
 --- !u!1001 &3928464225262596395
 PrefabInstance:
   m_ObjectHideFlags: 0
