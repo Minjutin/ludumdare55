@@ -61,6 +61,9 @@ public class TowerScript : MonoBehaviour
             clone.GetComponent<BulletScript>().target = enemies[0];
             clone.GetComponent<BulletScript>().dmg = dmg;
 
+            if(aoe > 0)
+                clone.GetComponent<BulletScript>().AOE = aoe;
+
             cooldownTimer = shootEveryInterval;
             Destroy(clone, 3f);
         }
