@@ -16,7 +16,21 @@ public class MainMenu : MonoBehaviour
     {
         Application.Quit();
     }
-    
+
+    public void OnMiljaBtn()
+    {
+        Application.OpenURL("https://minjutin.itch.io/");
+    }
+
+    public void OnTeemuBtn()
+    {
+        Application.OpenURL("https://6knowledge.itch.io/");
+    }
+
+    public void OnToniBtn()
+    {
+        Application.OpenURL("https://itch.io/profile/insanitum");
+    }
 
 
 }
