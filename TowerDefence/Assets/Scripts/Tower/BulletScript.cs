@@ -19,8 +19,8 @@ public class BulletScript : MonoBehaviour
 
             if (Vector3.Distance(transform.position, target.transform.position) < 0.1f)
             {
+                target.GetComponent<Enemy>().TakeHp(dmg);
                 Destroy(gameObject);
-                //TODO HP CALCULATION
             }
         }
         else

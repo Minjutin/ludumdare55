@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     public GameObject resourceMother;
     public Sprite resBone, resMeat, resPlutonium, resPotion;
     public Dictionary<Resource.Type, int> resAmount = new();
+    public GameObject resourceDropped;
     
 
     void Awake()
