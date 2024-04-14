@@ -7,7 +7,7 @@ public class BulletScript : MonoBehaviour
     public float speed = 5f;
     public float dmg = 1f;
     public GameObject target;
-
+    public bool isAOE;
 
     // Update is called once per frame
     void Update()
@@ -19,6 +19,11 @@ public class BulletScript : MonoBehaviour
 
             if (Vector3.Distance(transform.position, target.transform.position) < 0.1f)
             {
+                isAOE = true;
+
+                if (isAOE)
+                    gameObject.GetComponentInChildren<ParticleSystem>().Play();
+
                 target.GetComponent<Enemy>().TakeHp(dmg);
                 Destroy(gameObject);
             }
