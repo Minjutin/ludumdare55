@@ -12,6 +12,8 @@ public class EnemyManager : MonoBehaviour
 
     public Sprite meatE, boneE, potionE, plutoniumE;
 
+    public float boneprob, meatprob, plutprob, potprob;
+
     void Awake()
     {
         instance = this;

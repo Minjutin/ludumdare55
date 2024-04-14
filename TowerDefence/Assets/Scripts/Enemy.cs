@@ -24,6 +24,8 @@ public class Enemy : MonoBehaviour
 
     public void InitEnemy()
     {
+
+
         int which = Random.Range(0, 4);
         type = (Resource.Type)which;
 
@@ -36,7 +38,7 @@ public class Enemy : MonoBehaviour
                 gameObject.GetComponent<SpriteRenderer>().sprite = EnemyManager.instance.boneE;
                 break;
             case Resource.Type.Potion:
-                gameObject.GetComponent<SpriteRenderer>().sprite = EnemyManager.instance.potionE;
+                InitEnemy();
                 break;
             case Resource.Type.Plutonium:
                 gameObject.GetComponent<SpriteRenderer>().sprite = EnemyManager.instance.plutoniumE;
@@ -80,7 +82,7 @@ public class Enemy : MonoBehaviour
         if (hp < amount)
         {
             ShootResource();
-
+            Destroy(this.gameObject);
         }
 
 
