@@ -9,11 +9,13 @@ public class BulletScript : MonoBehaviour
     public GameObject target;
     public bool isAOE;
 
+
     // Update is called once per frame
     void Update()
     {
         if (target)
         {
+
             var step = speed * Time.deltaTime;
             transform.position = Vector3.MoveTowards(transform.position, target.transform.position, step);
 
@@ -21,12 +23,13 @@ public class BulletScript : MonoBehaviour
             {
                 if (isAOE)
                     gameObject.GetComponentInChildren<ParticleSystem>().Play();
-                
+
                 target.GetComponent<Enemy>().TakeHp(dmg);
                 gameObject.GetComponent<SpriteRenderer>().color = new Color(0,0,0,0);
 
             }
         }
+
         else
             gameObject.GetComponent<SpriteRenderer>().color = new Color(0, 0, 0, 0);
         
