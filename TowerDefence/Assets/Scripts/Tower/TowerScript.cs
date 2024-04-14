@@ -18,7 +18,7 @@ public class TowerScript : MonoBehaviour
     public void InitTower(int _dmg, int _range, int _aoe, int _boost)
     {
         dmg = _dmg; range = _range; aoe = _aoe; boost = _boost;
-        GetComponent<CircleCollider2D>().radius = range/2;
+        GetComponent<CircleCollider2D>().radius = range/1.5f;
 
         if(dmg == 0 && range == 0 && aoe == 0 && boost == 0)
         {

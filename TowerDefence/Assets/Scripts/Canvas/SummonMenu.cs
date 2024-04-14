@@ -34,7 +34,7 @@ public class SummonMenu : MonoBehaviour
 
     public void AddResource(string type)
     {
-        if(picked.Count <= 10)
+        if(picked.Count < 10)
         {
             Resource.Type t1 = Resource.Type.Plutonium;
             switch (type.ToLower())
@@ -91,6 +91,7 @@ public class SummonMenu : MonoBehaviour
             pickedResources[picked.Count - 1].transform.GetChild(0).gameObject.GetComponent<Image>().enabled = true;
             UpdateTexts();
         }
+        MainCanvas.instance.UpdateText();
     }
 
 

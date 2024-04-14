@@ -16,15 +16,17 @@ public class GameManager : MonoBehaviour
     void Awake()
     {
         instance = this;
-        resAmount.Add(Resource.Type.Meat, 0);
-        resAmount.Add(Resource.Type.Bone, 0);
-        resAmount.Add(Resource.Type.Potion, 0);
-        resAmount.Add(Resource.Type.Plutonium, 0);
+        resAmount.Add(Resource.Type.Meat, 5);
+        resAmount.Add(Resource.Type.Bone, 5);
+        resAmount.Add(Resource.Type.Potion, 5);
+        resAmount.Add(Resource.Type.Plutonium, 5);
+
     }
     // Start is called before the first frame update
     void Start()
     {
         TileManager.instance.InitializeTiles();
         EnemyManager.instance.SpawnEnemies();
+        MainCanvas.instance.UpdateText();
     }
 }

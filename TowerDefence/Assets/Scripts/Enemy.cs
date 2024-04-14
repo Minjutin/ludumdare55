@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    float hp;
+    public float hp;
     TileStatus currentTile, nextTile;
     int pathIndicator = 0;
     float t = 0;
@@ -79,7 +79,7 @@ public class Enemy : MonoBehaviour
     public void TakeHp(float amount)
     {
         hp -= amount;
-        if (hp < amount)
+        if (hp < 1)
         {
             ShootResource();
             Destroy(this.gameObject);
