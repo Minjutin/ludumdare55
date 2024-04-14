@@ -6,8 +6,10 @@ public class BulletScript : MonoBehaviour
 {
     public float speed = 5f;
     public float dmg = 1f;
-    public GameObject target;
+
     public bool isAOE;
+
+    public GameObject target;
     public List<Enemy> AOETargets = new List<Enemy>();
 
 
@@ -22,7 +24,6 @@ public class BulletScript : MonoBehaviour
 
             if (Vector3.Distance(transform.position, target.transform.position) < 0.001f)
             {
-                isAOE = true;
 
                 if (isAOE)
                 {
@@ -31,8 +32,6 @@ public class BulletScript : MonoBehaviour
                     if(AOETargets != null)
                         foreach (var Enemy in AOETargets)
                             Enemy.GetComponent<Enemy>().TakeHp(dmg);
-
-                    
 
                 }
 
@@ -52,9 +51,11 @@ public class BulletScript : MonoBehaviour
     {
         if (collision.gameObject.tag == "Enemy")
         {
+            Debug.Log(collision.gameObject.name);
             AOETargets.Add(collision.gameObject.GetComponent<Enemy>());
         }
     }
 
+    
 
 }
