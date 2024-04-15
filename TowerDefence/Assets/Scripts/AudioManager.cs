@@ -5,10 +5,13 @@ using UnityEngine;
 public class AudioManager : MonoBehaviour
 {
 
-    [Header("Audio")]
+    [Header("Deaths")]
     public AudioSource meatball;
     public AudioSource skeleton;
     public AudioSource plutonium;
+
+    [Header("Interactions")]
+    public AudioSource Click;
 
     public void PlayDeathAudio(string Type)
     {
@@ -27,6 +30,11 @@ public class AudioManager : MonoBehaviour
             default:
                 break;
         }
+    }
+
+    public void InteractAudio()
+    {
+        Click.Play();
     }
 
 
