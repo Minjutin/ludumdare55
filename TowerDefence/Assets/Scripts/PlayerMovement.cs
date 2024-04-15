@@ -108,7 +108,7 @@ public class PlayerMovement : MonoBehaviour
         {
             collision.GetComponent<Resource>().Collect();
         }
-        if (collision.gameObject.GetComponent<TowerScript>() || collision.gameObject.CompareTag("Interactable"))
+        if ((collision.gameObject.GetComponent<TowerScript>() && !collision.gameObject.GetComponent<TowerScript>().isInited) || collision.gameObject.CompareTag("Interactable"))
         {
             current = collision.gameObject;
         }

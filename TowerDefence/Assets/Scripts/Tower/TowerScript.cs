@@ -18,38 +18,38 @@ public class TowerScript : MonoBehaviour
 
     public float shootEveryInterval = 2.0f; 
     private float cooldownTimer = 0.0f;
-
     public void InitTower(int _dmg, int _range, int _aoe, int _boost)
     {
         dmg = _dmg; range = _range; aoe = _aoe; boost = _boost;
-        GetComponent<CircleCollider2D>().radius = range/1.5f;
 
-        if(dmg == 0 && range == 0 && aoe == 0 && boost == 0)
+        if (dmg == 0 && range == 0 && aoe == 0 && boost == 0)
         {
             tile.isEmpty = true;
             Destroy(this.gameObject);
         }
 
         //SET SPRITEz
-        if (dmg>range && dmg > aoe && dmg>boost)
+        if (dmg >= range && dmg>aoe*3 && dmg > boost)
             GetComponent<SpriteRenderer>().sprite = TowerManager.instance.dmg;
-        else if (range>aoe && range > boost)
-           GetComponent<SpriteRenderer>().sprite = TowerManager.instance.ranged;
+        else if ((range > dmg && range>aoe*3 && dmg > boost) || (range>0 && aoe==0 && boost==0))
+            GetComponent<SpriteRenderer>().sprite = TowerManager.instance.ranged;
         else if (aoe > boost)
             GetComponent<SpriteRenderer>().sprite = TowerManager.instance.aoe;
         else
             GetComponent<SpriteRenderer>().sprite = TowerManager.instance.boost;
 
-        if (boost > 0)
-            gameObject.transform.GetChild(1).GetComponent<ParticleSystem>().Play();
-        
-
         isInited = true;
         range++;
 
+        GetComponent<CircleCollider2D>().radius = range / 1.5f;
+
+        if (boost > 0)
+            gameObject.transform.GetChild(1).GetComponent<ParticleSystem>().Play();
+
         txt.gameObject.SetActive(true);
-        txt.text = "dmg "+dmg+"   rge "+range+"\r\naoe " +aoe+"   bst "+boost;
+        txt.text = "dmg " + dmg + "   rge " + range + "\r\naoe " + aoe + "   bst " + boost;
     }
+
 
     //Give boost to towers around it
     private void FixedUpdate()
@@ -73,13 +73,13 @@ public class TowerScript : MonoBehaviour
     {
         if (enemies.Count <= 0) 
             return;
-        else
+        else if (dmg>0)
         {
             GameObject clone;
             clone = Instantiate(prefab, transform.position, transform.rotation);
             clone.transform.parent = TowerManager.instance.bulletMother.transform;
             clone.GetComponent<BulletScript>().target = enemies[0];
-            clone.GetComponent<BulletScript>().dmg = dmg+1;
+            clone.GetComponent<BulletScript>().dmg = dmg;
 
             if(aoe > 0)
                 clone.GetComponent<BulletScript>().AOE = aoe;

@@ -12,24 +12,29 @@ public class EnemyAudioHandler : MonoBehaviour
 
         //Debug.Log("Rolled: " + rnd);
 
-        if(rnd > 15) {
-            switch (name)
+        if (GameManager.instance)
+        {
+            if (rnd > 15)
             {
-                case "Bone":
-                    if(!GameManager.instance.GetComponent<AudioManager>().skeleton.isPlaying)
-                        GameManager.instance.GetComponent<AudioManager>().PlayDeathAudio("skeleton");
-                    break;
-                case "Meat":
-                    if (!GameManager.instance.GetComponent<AudioManager>().meatball.isPlaying)
-                        GameManager.instance.GetComponent<AudioManager>().PlayDeathAudio("meatball");
-                    break;
-                case "Plutonium":
-                    if (!GameManager.instance.GetComponent<AudioManager>().plutonium.isPlaying)
-                        GameManager.instance.GetComponent<AudioManager>().PlayDeathAudio("plutonium");
-                    break;
-                default:
-                    break;
+                switch (name)
+                {
+                    case "Bone":
+                        if (!GameManager.instance.GetComponent<AudioManager>().skeleton.isPlaying)
+                            GameManager.instance.GetComponent<AudioManager>().PlayDeathAudio("skeleton");
+                        break;
+                    case "Meat":
+                        if (!GameManager.instance.GetComponent<AudioManager>().meatball.isPlaying)
+                            GameManager.instance.GetComponent<AudioManager>().PlayDeathAudio("meatball");
+                        break;
+                    case "Plutonium":
+                        if (!GameManager.instance.GetComponent<AudioManager>().plutonium.isPlaying)
+                            GameManager.instance.GetComponent<AudioManager>().PlayDeathAudio("plutonium");
+                        break;
+                    default:
+                        break;
+                }
             }
+
 
         }
     }

@@ -10,7 +10,7 @@ public class EnemyManager : MonoBehaviour
     public int enemyHp = 1;
 
     float t = 0; 
-    [SerializeField] float enemySpawnTime;
+    public float enemySpawnTime = 2;
 
     public Sprite meatE, boneE, potionE, plutoniumE;
 
