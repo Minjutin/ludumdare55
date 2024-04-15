@@ -25,8 +25,8 @@ public class RandomMusic : MonoBehaviour
     {
         if (!Current.isPlaying)
             PlayAudio();
-        else
-            Debug.Log("Playing music");
+        //else
+            //Debug.Log("Playing music");
 
     }
 }
