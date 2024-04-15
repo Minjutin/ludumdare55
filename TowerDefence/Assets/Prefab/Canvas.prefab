@@ -246,7 +246,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -330}
+  m_AnchoredPosition: {x: 0, y: -360}
   m_SizeDelta: {x: 762.008, y: 36.474}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2052083522638887607
@@ -355,7 +355,7 @@ GameObject:
   - component: {fileID: 7904926875836795402}
   - component: {fileID: 534298294362468768}
   m_Layer: 5
-  m_Name: Image
+  m_Name: TimerContainer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8377,7 +8377,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -26, y: 336}
+  m_AnchoredPosition: {x: -35, y: 373}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1440086071784913916
@@ -8408,7 +8408,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "GUIDE! \n<size=30>read carefully or suffer</size>"
+  m_text: "GUIDE! \n<size=40>read carefully or suffer</size>"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 199072ccafeee7047b37173ac9da3617, type: 2}
   m_sharedMaterial: {fileID: 7499957489265174800, guid: 199072ccafeee7047b37173ac9da3617, type: 2}
@@ -8435,8 +8435,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 44
-  m_fontSizeBase: 44
+  m_fontSize: 58.74
+  m_fontSizeBase: 58.74
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -8788,8 +8788,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1420, y: 750}
+  m_AnchoredPosition: {x: 9.376, y: -3.7072}
+  m_SizeDelta: {x: 1544.557, y: 847.56}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4595103120674719265
 CanvasRenderer:
@@ -8812,7 +8812,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.20754719, g: 0.16094697, b: 0.16094697, a: 1}
+  m_Color: {r: 0.13962269, g: 0.0998434, b: 0.0998434, a: 0.9843137}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

@@ -6,6 +6,11 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
 
+    private void Awake()
+    {
+        Time.timeScale = 1.0f;
+    }
+
     // Called when we click the "Play" button.
     public void OnPlayButton()
     {
