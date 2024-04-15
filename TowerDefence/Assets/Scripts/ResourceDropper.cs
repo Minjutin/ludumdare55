@@ -11,11 +11,17 @@ public class ResourceDropper : MonoBehaviour
     float timer = 0;
     [SerializeField] Resource.Type resType;
 
+    public GameObject pressE;
+
     private void FixedUpdate()
     {
         if (timer > 0)
         {
             timer -= Time.fixedDeltaTime;
+        }
+        else
+        {
+            pressE.SetActive(true);
         }
     }
 
@@ -27,6 +33,7 @@ public class ResourceDropper : MonoBehaviour
 
             for(int b = 0;  b < amount; b++){
                 ShootResource();
+                pressE.SetActive(false);
             }
         }
     }

@@ -7,7 +7,7 @@ public class MainCanvas : MonoBehaviour
     public static MainCanvas instance;
     public TMPro.TextMeshProUGUI resources, level;
 
-    public GameObject SummonMenu;
+    public GameObject SummonMenu, winMenu;
 
     private void Awake()
     {
@@ -29,5 +29,10 @@ public class MainCanvas : MonoBehaviour
     public void UpdateLevel(string txt)
     {
         level.text = "Level " + txt;
+    }
+
+    public void OpenWinCanvas()
+    {
+        winMenu.SetActive(true);
     }
 }

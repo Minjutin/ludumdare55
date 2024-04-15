@@ -115,11 +115,12 @@ public class Enemy : MonoBehaviour
         //If type is potion || plutonium drop either one
         if(type == Resource.Type.Potion || type == Resource.Type.Plutonium)
         {
+            
             int which = Random.Range(0, 2);
             if(which == 0)
-                type = Resource.Type.Potion;
+                tempType = Resource.Type.Potion;
             if (which == 1)
-                type = Resource.Type.Plutonium;
+                tempType = Resource.Type.Plutonium;
         }
         resource.GetComponent<Resource>().InitThis(tempType);
     }
