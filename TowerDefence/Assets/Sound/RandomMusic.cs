@@ -5,20 +5,28 @@ using UnityEngine;
 public class RandomMusic : MonoBehaviour
 {
     public List<AudioSource> music;
-    public List<AudioSource> deathSFX;
+    public AudioSource Current;
 
-    private int rand;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
+    {
+        PlayAudio();
+        InvokeRepeating("checkMusic", 2.0f, 2.0f);
+    }
+
+    private void PlayAudio()
     {
         int rand = Random.Range(0, music.Count);
         music[rand].Play();
+        Current = music[rand];
     }
 
-    // Update is called once per frame
-    void Update()
+    void checkMusic()
     {
-        
+        if (!Current.isPlaying)
+            PlayAudio();
+        else
+            Debug.Log("Playing music");
+
     }
 }
