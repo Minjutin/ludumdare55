@@ -97,7 +97,7 @@ public class Enemy : MonoBehaviour
         if (hp < 1)
         {
             ShootResource();
-            Destroy(this.gameObject);
+            Destroy(this.gameObject, 0.01f);
         }
 
         hpText.text = hp + "";
