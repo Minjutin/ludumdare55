@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class EndScreen : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+
+    public void ReturnMenu()
     {
-        
+        UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu");
     }
 
-    // Update is called once per frame
-    void Update()
+    public void InfiniteGame()
     {
-        
+        GameManager.instance.infinite = true;
+        Time.timeScale = 1f;
+        GameManager.instance.NextLevel();
+        this.gameObject.SetActive(false);
     }
 }

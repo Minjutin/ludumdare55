@@ -13,7 +13,9 @@ public class GameManager : MonoBehaviour
     public GameObject resourceDropped;
 
     public int currentLevel = 1;
-    
+
+    public bool infinite = false;
+
 
     void Awake()
     {
@@ -36,12 +38,22 @@ public class GameManager : MonoBehaviour
 
     public void NextLevel()
     {
-        if (currentLevel < 10)
+        if (currentLevel < 10 || infinite)
         {
             currentLevel++;
             MainCanvas.instance.UpdateLevel(currentLevel);
             EnemyManager.instance.enemyHp = currentLevel * currentLevel;
-            EnemyManager.instance.enemySpawnTime -= 0.2f;
+
+            if(EnemyManager.instance.enemySpawnTime > 0.3f)
+            {
+                EnemyManager.instance.enemySpawnTime -= 0.2f;
+            }
+            else
+            {
+                EnemyManager.instance.enemySpawnTime = 0.1f;
+            }
+
+
         }
         else
         {
