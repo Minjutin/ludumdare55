@@ -44,7 +44,7 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            MainCanvas.instance.
+            MainCanvas.instance.winMenu.SetActive(true);
         }
       
     }
