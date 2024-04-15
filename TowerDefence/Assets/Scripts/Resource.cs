@@ -41,8 +41,7 @@ public class Resource : MonoBehaviour
 
     public void Collect()
     {
-        GameManager.instance.resAmount[type]++;
-        MainCanvas.instance.UpdateText();
+        GameManager.instance.AddResource(type);
 
         Destroy(gameObject);
     }

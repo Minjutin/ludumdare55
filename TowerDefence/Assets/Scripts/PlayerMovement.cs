@@ -102,7 +102,7 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
-    private void OnTriggerStay2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.GetComponent<Resource>())
         {
@@ -132,6 +132,10 @@ public class PlayerMovement : MonoBehaviour
         {
             current.gameObject.GetComponent<TowerScript>().pressE.SetActive(false);
         }
-        current = null;
+        if(current && current.gameObject == other.gameObject)
+        {
+            current = null;
+        }
+
     }
 }

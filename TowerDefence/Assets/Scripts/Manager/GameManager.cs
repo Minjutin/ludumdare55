@@ -34,6 +34,7 @@ public class GameManager : MonoBehaviour
         MainCanvas.instance.UpdateText();
 
         EnemyManager.instance.enemyHp = 1;
+        AddResource(Resource.Type.Bone);
     }
 
     public void NextLevel()
@@ -63,4 +64,9 @@ public class GameManager : MonoBehaviour
       
     }
 
+    public void AddResource(Resource.Type type)
+    {
+        resAmount[type]++;
+        MainCanvas.instance.UpdateText();
+    }
 }

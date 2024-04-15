@@ -41,8 +41,17 @@ public class BulletScript : MonoBehaviour
                     gameObject.GetComponentInChildren<ParticleSystem>().Play();
 
                     if(AOETargets != null)
+                    {
                         foreach (var Enemy in AOETargets)
-                            Enemy.GetComponent<Enemy>().TakeHp(dmg);
+                        {
+                            if (Enemy)
+                            {
+                                Enemy.GetComponent<Enemy>().TakeHp(dmg);
+                            }
+                        }
+
+                    }
+
 
                 }
 

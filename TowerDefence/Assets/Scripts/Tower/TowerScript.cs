@@ -67,7 +67,7 @@ public class TowerScript : MonoBehaviour
         {
             foreach(TowerScript i in towers)
             {
-                i.cooldownTimer -= Time.fixedDeltaTime*(boost/2);
+                i.cooldownTimer -= Time.fixedDeltaTime*(boost/4);
             }
         }
     }
