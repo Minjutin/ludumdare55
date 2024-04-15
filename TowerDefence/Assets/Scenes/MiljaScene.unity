@@ -2120,10 +2120,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 63025348784970097, guid: 5474a48177036b74c9da9968a343edb8, type: 3}
-      propertyPath: m_Name
-      value: TimerContainer
-      objectReference: {fileID: 0}
     - target: {fileID: 1491165051553926340, guid: 5474a48177036b74c9da9968a343edb8, type: 3}
       propertyPath: m_Name
       value: Canvas
@@ -2256,7 +2252,7 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8190888553555431661, guid: 5474a48177036b74c9da9968a343edb8, type: 3}
+    - target: {fileID: 8520433504352261091, guid: 5474a48177036b74c9da9968a343edb8, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
@@ -2294,18 +2290,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 207530895682658385, guid: 847c36ba646246442a979593be228e26, type: 3}
-      propertyPath: empty
-      value: 
-      objectReference: {fileID: -1569249978, guid: 32565a1e4e02ffb46b94e6a2e568087e, type: 3}
-    - target: {fileID: 207530895682658385, guid: 847c36ba646246442a979593be228e26, type: 3}
-      propertyPath: defTower
-      value: 
-      objectReference: {fileID: 7598617757039992818, guid: bcdc0258ea0cf2746864827c368e00cc, type: 3}
-    - target: {fileID: 207530895682658385, guid: 847c36ba646246442a979593be228e26, type: 3}
-      propertyPath: timeCount
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 207530895682658385, guid: 847c36ba646246442a979593be228e26, type: 3}
       propertyPath: towerMother
       value: 
@@ -2359,22 +2343,6 @@ PrefabInstance:
       value: GameManager
       objectReference: {fileID: 0}
     - target: {fileID: 4669055274240880418, guid: 847c36ba646246442a979593be228e26, type: 3}
-      propertyPath: resBone
-      value: 
-      objectReference: {fileID: -1569249978, guid: cdb7eb9cb2bdbeb40bae65e6a61c227b, type: 3}
-    - target: {fileID: 4669055274240880418, guid: 847c36ba646246442a979593be228e26, type: 3}
-      propertyPath: resMeat
-      value: 
-      objectReference: {fileID: -1569249978, guid: eef9e96d450bf634c99597aacb7ebed6, type: 3}
-    - target: {fileID: 4669055274240880418, guid: 847c36ba646246442a979593be228e26, type: 3}
-      propertyPath: resPotion
-      value: 
-      objectReference: {fileID: -1569249978, guid: 91ddad6865056064d8e340eb7be9dca7, type: 3}
-    - target: {fileID: 4669055274240880418, guid: 847c36ba646246442a979593be228e26, type: 3}
-      propertyPath: resPlutonium
-      value: 
-      objectReference: {fileID: -1569249978, guid: f6ae8224b1023084c9d41a1398f41578, type: 3}
-    - target: {fileID: 4669055274240880418, guid: 847c36ba646246442a979593be228e26, type: 3}
       propertyPath: WarningCanvas
       value: 
       objectReference: {fileID: 3800255141665780358}
@@ -2382,42 +2350,10 @@ PrefabInstance:
       propertyPath: resourceMother
       value: 
       objectReference: {fileID: 1371042119}
-    - target: {fileID: 4669055274240880418, guid: 847c36ba646246442a979593be228e26, type: 3}
-      propertyPath: resourceDropped
-      value: 
-      objectReference: {fileID: 142482230151870763, guid: 5c4add389d16fb1499117ea38a7283f5, type: 3}
-    - target: {fileID: 7353095601601474722, guid: 847c36ba646246442a979593be228e26, type: 3}
-      propertyPath: boneE
-      value: 
-      objectReference: {fileID: -1569249978, guid: f92e0410eebdb564b9ec82f69a7c147f, type: 3}
-    - target: {fileID: 7353095601601474722, guid: 847c36ba646246442a979593be228e26, type: 3}
-      propertyPath: meatE
-      value: 
-      objectReference: {fileID: -1569249978, guid: 48bea1c52bec9be44829db5fbd116127, type: 3}
-    - target: {fileID: 7353095601601474722, guid: 847c36ba646246442a979593be228e26, type: 3}
-      propertyPath: boneprob
-      value: 33
-      objectReference: {fileID: 0}
-    - target: {fileID: 7353095601601474722, guid: 847c36ba646246442a979593be228e26, type: 3}
-      propertyPath: meatprob
-      value: 34
-      objectReference: {fileID: 0}
-    - target: {fileID: 7353095601601474722, guid: 847c36ba646246442a979593be228e26, type: 3}
-      propertyPath: plutprob
-      value: 33
-      objectReference: {fileID: 0}
-    - target: {fileID: 7353095601601474722, guid: 847c36ba646246442a979593be228e26, type: 3}
-      propertyPath: plutoniumE
-      value: 
-      objectReference: {fileID: -1569249978, guid: 4f1759ce035a4d2499ad4160cb0abe1a, type: 3}
     - target: {fileID: 7353095601601474722, guid: 847c36ba646246442a979593be228e26, type: 3}
       propertyPath: enemyMother
       value: 
       objectReference: {fileID: 1601420902}
-    - target: {fileID: 7353095601601474722, guid: 847c36ba646246442a979593be228e26, type: 3}
-      propertyPath: enemySpawnTime
-      value: 2
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
