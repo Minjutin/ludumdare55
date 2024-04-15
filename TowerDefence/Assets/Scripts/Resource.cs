@@ -14,19 +14,19 @@ public class Resource : MonoBehaviour
         switch (type)
         {
             case Resource.Type.Meat:
-                transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = GameManager.instance.resMeat;
+                transform.GetComponent<SpriteRenderer>().sprite = GameManager.instance.resMeat;
                 GetComponent<SpriteRenderer>().sprite = GameManager.instance.resMeat;
                 break;
             case Resource.Type.Bone:
-                transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = GameManager.instance.resBone;
+                transform.GetComponent<SpriteRenderer>().sprite = GameManager.instance.resBone;
                 GetComponent<SpriteRenderer>().sprite = GameManager.instance.resBone;
                 break;
             case Resource.Type.Potion:
-                transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = GameManager.instance.resPotion;
+                transform.GetComponent<SpriteRenderer>().sprite = GameManager.instance.resPotion;
                 GetComponent<SpriteRenderer>().sprite = GameManager.instance.resPotion;
                 break;
             case Resource.Type.Plutonium:
-                transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = GameManager.instance.resPlutonium;
+                transform.GetComponent<SpriteRenderer>().sprite = GameManager.instance.resPlutonium;
                 GetComponent<SpriteRenderer>().sprite = GameManager.instance.resPlutonium;
                 break;
             default:
@@ -42,7 +42,6 @@ public class Resource : MonoBehaviour
     public void Collect()
     {
         GameManager.instance.AddResource(type);
-
         Destroy(gameObject);
     }
 
