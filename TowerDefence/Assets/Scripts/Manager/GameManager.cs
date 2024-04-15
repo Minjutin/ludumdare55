@@ -39,12 +39,13 @@ public class GameManager : MonoBehaviour
         if (currentLevel < 10)
         {
             currentLevel++;
-            MainCanvas.instance.UpdateLevel(currentLevel + "");
+            MainCanvas.instance.UpdateLevel(currentLevel);
             EnemyManager.instance.enemyHp = currentLevel * 3;
         }
         else
         {
             MainCanvas.instance.winMenu.SetActive(true);
+            Time.timeScale = 0;
         }
       
     }

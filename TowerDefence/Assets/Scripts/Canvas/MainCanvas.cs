@@ -26,9 +26,13 @@ public class MainCanvas : MonoBehaviour
         SummonMenu.SetActive(true);
     }
 
-    public void UpdateLevel(string txt)
+    public void UpdateLevel(int txt)
     {
         level.text = "Level " + txt;
+        if (txt == 10)
+        {
+            winMenu.SetActive(true);
+        }
     }
 
     public void OpenWinCanvas()
