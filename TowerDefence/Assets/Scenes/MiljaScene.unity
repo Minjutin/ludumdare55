@@ -349,6 +349,22 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 465200062312511291, guid: aa53d888861716b49add9dbf01a7cc72, type: 3}
+      propertyPath: m_Size.x
+      value: 1.0321074
+      objectReference: {fileID: 0}
+    - target: {fileID: 465200062312511291, guid: aa53d888861716b49add9dbf01a7cc72, type: 3}
+      propertyPath: m_Size.y
+      value: 0.95289767
+      objectReference: {fileID: 0}
+    - target: {fileID: 465200062312511291, guid: aa53d888861716b49add9dbf01a7cc72, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.011315823
+      objectReference: {fileID: 0}
+    - target: {fileID: 465200062312511291, guid: aa53d888861716b49add9dbf01a7cc72, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.045262158
+      objectReference: {fileID: 0}
+    - target: {fileID: 465200062312511291, guid: aa53d888861716b49add9dbf01a7cc72, type: 3}
       propertyPath: m_SpriteTilingProperty.newSize.y
       value: 1
       objectReference: {fileID: 0}
@@ -2486,6 +2502,18 @@ PrefabInstance:
       propertyPath: meatE
       value: 
       objectReference: {fileID: -1569249978, guid: 48bea1c52bec9be44829db5fbd116127, type: 3}
+    - target: {fileID: 7353095601601474722, guid: 847c36ba646246442a979593be228e26, type: 3}
+      propertyPath: boneprob
+      value: 33
+      objectReference: {fileID: 0}
+    - target: {fileID: 7353095601601474722, guid: 847c36ba646246442a979593be228e26, type: 3}
+      propertyPath: meatprob
+      value: 34
+      objectReference: {fileID: 0}
+    - target: {fileID: 7353095601601474722, guid: 847c36ba646246442a979593be228e26, type: 3}
+      propertyPath: plutprob
+      value: 33
+      objectReference: {fileID: 0}
     - target: {fileID: 7353095601601474722, guid: 847c36ba646246442a979593be228e26, type: 3}
       propertyPath: plutoniumE
       value: 

@@ -12,6 +12,8 @@ public class TowerScript : MonoBehaviour
 
     int dmg, range, aoe, boost; //ints
 
+    public TMPro.TextMeshPro txt;
+
     public float shootEveryInterval = 2.0f; 
     private float cooldownTimer = 0.0f;
 
@@ -37,6 +39,9 @@ public class TowerScript : MonoBehaviour
             GetComponent<SpriteRenderer>().sprite = TowerManager.instance.boost;
 
         isInited = true;
+
+        txt.gameObject.SetActive(true);
+        txt.text = "dmg "+dmg+"   rge "+range+"\r\naoe " +aoe+"   bst "+boost;
     }
 
     void Update()
