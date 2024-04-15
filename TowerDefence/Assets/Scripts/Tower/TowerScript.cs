@@ -38,6 +38,10 @@ public class TowerScript : MonoBehaviour
         else
             GetComponent<SpriteRenderer>().sprite = TowerManager.instance.boost;
 
+        if (boost > 0)
+            gameObject.transform.GetChild(1).GetComponent<ParticleSystem>().Play();
+        
+
         isInited = true;
 
         txt.gameObject.SetActive(true);
