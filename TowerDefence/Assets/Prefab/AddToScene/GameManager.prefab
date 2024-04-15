@@ -61,6 +61,8 @@ MonoBehaviour:
   resourceDropped: {fileID: 142482230151870763, guid: 5c4add389d16fb1499117ea38a7283f5, type: 3}
   currentLevel: 1
   infinite: 0
+  shownFPSWarning: 0
+  WarningCanvas: {fileID: 0}
 --- !u!82 &7730731910527606657
 AudioSource:
   m_ObjectHideFlags: 0
