@@ -193,6 +193,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 891947895256736542}
     m_Modifications:
+    - target: {fileID: 1842819438085194907, guid: 2394e9240ea620a4db4026a6ad96e627, type: 3}
+      propertyPath: ShapeModule.radius.value
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1842819438085194907, guid: 2394e9240ea620a4db4026a6ad96e627, type: 3}
+      propertyPath: ShapeModule.radiusThickness
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1842819438085194907, guid: 2394e9240ea620a4db4026a6ad96e627, type: 3}
+      propertyPath: EmissionModule.m_Bursts.Array.data[0].countCurve.scalar
+      value: 500
+      objectReference: {fileID: 0}
     - target: {fileID: 4955828509093630282, guid: 2394e9240ea620a4db4026a6ad96e627, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
