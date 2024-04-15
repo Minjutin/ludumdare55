@@ -2197,7 +2197,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: OUR COOL GAME
+  m_text: HAT VS EVIL
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 47b3e88530fdefa47b59f3fd3eb850f4, type: 2}
   m_sharedMaterial: {fileID: 4637474380514261919, guid: 47b3e88530fdefa47b59f3fd3eb850f4, type: 2}
@@ -2556,7 +2556,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 48bea1c52bec9be44829db5fbd116127, type: 3}
+  m_Sprite: {fileID: -1569249978, guid: 48bea1c52bec9be44829db5fbd116127, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
