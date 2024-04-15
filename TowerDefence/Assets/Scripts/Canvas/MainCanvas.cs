@@ -7,11 +7,16 @@ public class MainCanvas : MonoBehaviour
     public static MainCanvas instance;
     public TMPro.TextMeshProUGUI resources, level;
 
-    public GameObject SummonMenu, winMenu;
+    public GameObject SummonMenu, winMenu, tutorial;
 
     private void Awake()
     {
         instance = this;
+    }
+
+    private void Start()
+    {
+        OpenTutorial(true);
     }
 
     // Update is called once per frame
@@ -34,5 +39,16 @@ public class MainCanvas : MonoBehaviour
     public void OpenWinCanvas()
     {
         winMenu.SetActive(true);
+    }
+
+    public void OpenTutorial(bool opened)
+    {
+        tutorial.SetActive(opened);
+        if (opened)
+        {
+            Time.timeScale = 0f;
+        }
+        else
+            Time.timeScale = 1f;
     }
 }
