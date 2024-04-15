@@ -6,6 +6,8 @@ public class TowerScript : MonoBehaviour
 {
     public GameObject prefab;
     public List<GameObject> enemies = new List<GameObject>();
+    public List<TowerScript> towers = new();
+
     public TileStatus tile;
 
     public bool isInited = false;
@@ -19,7 +21,7 @@ public class TowerScript : MonoBehaviour
 
     public void InitTower(int _dmg, int _range, int _aoe, int _boost)
     {
-        dmg = _dmg; range = 1+_range; aoe = _aoe; boost = _boost;
+        dmg = _dmg; range = _range; aoe = _aoe; boost = _boost;
         GetComponent<CircleCollider2D>().radius = range/1.5f;
 
         if(dmg == 0 && range == 0 && aoe == 0 && boost == 0)
@@ -39,18 +41,28 @@ public class TowerScript : MonoBehaviour
             GetComponent<SpriteRenderer>().sprite = TowerManager.instance.boost;
 
         isInited = true;
+        range++;
 
         txt.gameObject.SetActive(true);
         txt.text = "dmg "+dmg+"   rge "+range+"\r\naoe " +aoe+"   bst "+boost;
     }
 
-    void Update()
+    //Give boost to towers around it
+    private void FixedUpdate()
     {
-        cooldownTimer -= Time.deltaTime;
+        cooldownTimer -= Time.fixedDeltaTime;
 
         if (cooldownTimer <= 0)
             Shoot();
 
+        //Check boost
+        if (boost > 0)
+        {
+            foreach(TowerScript i in towers)
+            {
+                i.cooldownTimer -= Time.fixedDeltaTime*(boost/2);
+            }
+        }
     }
 
     void Shoot()
@@ -81,6 +93,10 @@ public class TowerScript : MonoBehaviour
         if(collision.gameObject.tag == "Enemy")
         {
             enemies.Add(collision.gameObject);
+        }
+        if (collision.gameObject.GetComponent<TowerScript>())
+        {
+            towers.Add(collision.gameObject.GetComponent<TowerScript>());
         }
     }
 
