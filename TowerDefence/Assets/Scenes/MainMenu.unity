@@ -2143,23 +2143,24 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Milja Kres
+  m_text: '<color=#007BFF><u>Milja Kres</color></u>
 
     Lead Programmer
 
 
-    Teemu Ekblad
+    <color=#007BFF><u>Teemu
+    Ekblad</color></u>
 
-    Programming
-
-
-    Toni
-    Teider
-
-    Art
+    Programmer
 
 
-    Click to open'
+    <color=#007BFF><u>Toni Teider</color></u>
+
+    Artist
+
+
+    Click
+    names to view itch.io pages'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ea5f4166fbd0d8249956e06d7d6a1847, type: 2}
   m_sharedMaterial: {fileID: -2952084658578556442, guid: ea5f4166fbd0d8249956e06d7d6a1847, type: 2}
