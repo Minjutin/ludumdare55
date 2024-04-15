@@ -10,17 +10,22 @@ public class EnemyAudioHandler : MonoBehaviour
         int rnd = Random.Range(1, 20);
         string name = gameObject.GetComponent<Enemy>().type.ToString();
 
-        if(rnd/2 == 0) {
+        Debug.Log("Rolled: " + rnd);
+
+        if(rnd > 15) {
             switch (name)
             {
                 case "Bone":
-                    GameManager.instance.GetComponent<AudioManager>().PlayDeathAudio("skeleton");
+                    if(!GameManager.instance.GetComponent<AudioManager>().skeleton.isPlaying)
+                        GameManager.instance.GetComponent<AudioManager>().PlayDeathAudio("skeleton");
                     break;
                 case "Meat":
-                    GameManager.instance.GetComponent<AudioManager>().PlayDeathAudio("meatball");
+                    if (!GameManager.instance.GetComponent<AudioManager>().meatball.isPlaying)
+                        GameManager.instance.GetComponent<AudioManager>().PlayDeathAudio("meatball");
                     break;
                 case "Plutonium":
-                    GameManager.instance.GetComponent<AudioManager>().PlayDeathAudio("plutonium");
+                    if (!GameManager.instance.GetComponent<AudioManager>().plutonium.isPlaying)
+                        GameManager.instance.GetComponent<AudioManager>().PlayDeathAudio("plutonium");
                     break;
                 default:
                     break;
