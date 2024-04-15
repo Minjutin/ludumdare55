@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6815838207505108706}
   - component: {fileID: 5122815350252736607}
   - component: {fileID: 4216373710303829920}
+  - component: {fileID: 2578049219832204805}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -56,6 +57,8 @@ MonoBehaviour:
   resPlutonium: {fileID: -1569249978, guid: f6ae8224b1023084c9d41a1398f41578, type: 3}
   resPotion: {fileID: -1569249978, guid: 91ddad6865056064d8e340eb7be9dca7, type: 3}
   resourceDropped: {fileID: 142482230151870763, guid: 5c4add389d16fb1499117ea38a7283f5, type: 3}
+  currentLevel: 1
+  infinite: 0
 --- !u!82 &7730731910527606657
 AudioSource:
   m_ObjectHideFlags: 0
@@ -359,6 +362,103 @@ MonoBehaviour:
   meatball: {fileID: 5122815350252736607}
   skeleton: {fileID: 6815838207505108706}
   plutonium: {fileID: 7730731910527606657}
+  Click: {fileID: 2578049219832204805}
+--- !u!82 &2578049219832204805
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3555274727699701445}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 581882671673055709, guid: 49a3e6db75270e242a5e5729a0509eec, type: 2}
+  m_audioClip: {fileID: 8300000, guid: b5269c8f0c3cf594f8068907e4acb7d2, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 0.5
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &4684856160160976203
 GameObject:
   m_ObjectHideFlags: 0
@@ -405,14 +505,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy: {fileID: 142482230151870763, guid: 709a571e5ac2725458b65093de7ea65c, type: 3}
   enemyMother: {fileID: 0}
+  enemyHp: 1
   enemySpawnTime: 2
   meatE: {fileID: -1569249978, guid: 48bea1c52bec9be44829db5fbd116127, type: 3}
   boneE: {fileID: -1569249978, guid: f92e0410eebdb564b9ec82f69a7c147f, type: 3}
   potionE: {fileID: 0}
   plutoniumE: {fileID: -1569249978, guid: 4f1759ce035a4d2499ad4160cb0abe1a, type: 3}
-  boneprob: 0
-  meatprob: 0
-  plutprob: 0
+  boneprob: 33
+  meatprob: 34
+  plutprob: 33
   potprob: 0
 --- !u!1 &6698629348738162434
 GameObject:
