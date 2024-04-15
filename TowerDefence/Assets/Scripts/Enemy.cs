@@ -12,9 +12,11 @@ public class Enemy : MonoBehaviour
     float t = 0;
     float moveTime = 1f;
 
+    [SerializeField] TMPro.TextMeshPro hpText;
+
     List<TileStatus> tilePath;
 
-    Resource.Type type;
+    public Resource.Type type;
 
     private void Start()
     {
@@ -27,10 +29,17 @@ public class Enemy : MonoBehaviour
 
     public void InitEnemy()
     {
+        hpText.text = hp+"";
 
-
-        int which = Random.Range(0, 4);
-        type = (Resource.Type)which;
+        int which = Random.Range(0, 100);
+        if (which <= EnemyManager.instance.boneprob)
+            type = Resource.Type.Bone;
+        else if (which <= EnemyManager.instance.boneprob + EnemyManager.instance.meatprob)
+            type = Resource.Type.Meat;
+        else if (which <= EnemyManager.instance.boneprob + EnemyManager.instance.meatprob + EnemyManager.instance.plutprob)
+            type = Resource.Type.Plutonium;
+        else
+            type = Resource.Type.Potion;
 
         switch (type)
         {
@@ -91,7 +100,7 @@ public class Enemy : MonoBehaviour
             Destroy(this.gameObject);
         }
 
-
+        hpText.text = hp + "";
     }
 
     public void ShootResource()
@@ -100,6 +109,18 @@ public class Enemy : MonoBehaviour
         Vector3 dir = (Quaternion.Euler(0f, 0f, deg) * new Vector2(0, 1)).normalized;
         GameObject resource = Instantiate(GameManager.instance.resourceDropped, (this.transform.position + dir) * 1, Quaternion.identity);
         resource.transform.parent = GameManager.instance.resourceMother.transform;
-        resource.GetComponent<Resource>().InitThis(type);
+
+        Resource.Type tempType = type;
+
+        //If type is potion || plutonium drop either one
+        if(type == Resource.Type.Potion || type == Resource.Type.Plutonium)
+        {
+            int which = Random.Range(0, 2);
+            if(which == 0)
+                type = Resource.Type.Potion;
+            if (which == 1)
+                type = Resource.Type.Plutonium;
+        }
+        resource.GetComponent<Resource>().InitThis(tempType);
     }
 }
