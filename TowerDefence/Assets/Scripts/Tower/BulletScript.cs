@@ -32,6 +32,12 @@ public class BulletScript : MonoBehaviour
 
                 if (AOE > 0)
                 {
+                    float radius = AOE / 2;
+
+                    ParticleSystem ps = gameObject.GetComponentInChildren<ParticleSystem>();
+                    var sh = ps.shape;
+                    sh.radius = radius;
+
                     gameObject.GetComponentInChildren<ParticleSystem>().Play();
 
                     if(AOETargets != null)
