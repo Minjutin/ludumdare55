@@ -18,8 +18,11 @@ public class TowerScript : MonoBehaviour
 
     public float shootEveryInterval = 2.0f; 
     private float cooldownTimer = 0.0f;
+    public GameObject pressE;
+
     public void InitTower(int _dmg, int _range, int _aoe, int _boost)
     {
+        pressE.SetActive(false);
         dmg = _dmg; range = _range; aoe = _aoe; boost = _boost;
 
         if (dmg == 0 && range == 0 && aoe == 0 && boost == 0)

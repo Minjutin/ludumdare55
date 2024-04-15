@@ -41,7 +41,7 @@ public class GameManager : MonoBehaviour
             currentLevel++;
             MainCanvas.instance.UpdateLevel(currentLevel);
             EnemyManager.instance.enemyHp = currentLevel * currentLevel;
-            EnemyManager.instance.enemySpawnTime -= - 0.2f;
+            EnemyManager.instance.enemySpawnTime -= 0.2f;
         }
         else
         {

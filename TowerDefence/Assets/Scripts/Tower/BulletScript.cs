@@ -44,7 +44,7 @@ public class BulletScript : MonoBehaviour
                 gameObject.GetComponent<SpriteRenderer>().color = new Color(0, 0, 0, 0);
 
                 if (AOE == 0)
-                    target.GetComponent<Enemy>().TakeHp(dmg);
+                    target.GetComponent<Enemy>().TakeHp(Mathf.CeilToInt(dmg/2));
 
                 target = null;
             }

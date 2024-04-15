@@ -92,7 +92,7 @@ public class Enemy : MonoBehaviour
 
     public void TakeHp(float amount)
     {
-        Debug.Log(amount);
+        //Debug.Log(amount);
         hp -= amount;
         if (hp < 1)
         {

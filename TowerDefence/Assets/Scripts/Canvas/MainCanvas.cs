@@ -29,10 +29,6 @@ public class MainCanvas : MonoBehaviour
     public void UpdateLevel(int txt)
     {
         level.text = "Level " + txt;
-        if (txt == 10)
-        {
-            winMenu.SetActive(true);
-        }
     }
 
     public void OpenWinCanvas()

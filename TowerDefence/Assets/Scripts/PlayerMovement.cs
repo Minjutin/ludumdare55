@@ -110,12 +110,28 @@ public class PlayerMovement : MonoBehaviour
         }
         if ((collision.gameObject.GetComponent<TowerScript>() && !collision.gameObject.GetComponent<TowerScript>().isInited) || collision.gameObject.CompareTag("Interactable"))
         {
+
+
+            if (current && current.gameObject.GetComponent<TowerScript>())
+            {
+                current.gameObject.GetComponent<TowerScript>().pressE.SetActive(false);
+            }
+
             current = collision.gameObject;
+
+            if (collision.gameObject.GetComponent<TowerScript>())
+            {
+                collision.gameObject.GetComponent<TowerScript>().pressE.SetActive(true);
+            }
         }
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
+        if (current && current.gameObject.GetComponent<TowerScript>() && other.gameObject == current.gameObject)
+        {
+            current.gameObject.GetComponent<TowerScript>().pressE.SetActive(false);
+        }
         current = null;
     }
 }
