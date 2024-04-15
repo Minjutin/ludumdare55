@@ -78,6 +78,8 @@ public class TowerScript : MonoBehaviour
             return;
         else if (dmg>0)
         {
+            GameManager.instance.GetComponent<AudioManager>().TowerShoot();
+
             GameObject clone;
             clone = Instantiate(prefab, transform.position, transform.rotation);
             clone.transform.parent = TowerManager.instance.bulletMother.transform;
