@@ -16,6 +16,9 @@ public class GameManager : MonoBehaviour
 
     public bool infinite = false;
 
+    [Header("FPS Warning")]
+    private int fps;
+    public GameObject WarningCanvas;
 
     void Awake()
     {
@@ -34,6 +37,13 @@ public class GameManager : MonoBehaviour
         MainCanvas.instance.UpdateText();
 
         EnemyManager.instance.enemyHp = 1;
+        InvokeRepeating("checkFPS", 30.0f, 2.0f);
+
+    }
+
+    private void Update()
+    {
+        fps = ((int)(1f / Time.unscaledDeltaTime));
     }
 
     public void NextLevel()
@@ -67,5 +77,15 @@ public class GameManager : MonoBehaviour
     {
         resAmount[type]++;
         MainCanvas.instance.UpdateText();
+    }
+
+    public void checkFPS()
+    {
+        if (fps < 20)
+        {
+            CancelInvoke();
+            WarningCanvas.SetActive(true);
+            Debug.Log("here again");
+        }
     }
 }
