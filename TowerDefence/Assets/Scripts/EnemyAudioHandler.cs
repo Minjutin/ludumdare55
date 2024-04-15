@@ -10,7 +10,7 @@ public class EnemyAudioHandler : MonoBehaviour
         int rnd = Random.Range(1, 20);
         string name = gameObject.GetComponent<Enemy>().type.ToString();
 
-        Debug.Log("Rolled: " + rnd);
+        //Debug.Log("Rolled: " + rnd);
 
         if(rnd > 15) {
             switch (name)
