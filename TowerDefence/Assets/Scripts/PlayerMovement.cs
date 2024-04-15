@@ -63,7 +63,7 @@ public class PlayerMovement : MonoBehaviour
 
             if (current)
             {
-                Debug.Log(current.tag);
+                //Debug.Log(current.tag);
                 if (current.CompareTag("Interactable"))
                 {
 
