@@ -7,6 +7,8 @@ public class EnemyManager : MonoBehaviour
     public static EnemyManager instance;
     public GameObject enemy, enemyMother;
 
+    public int enemyHp = 1;
+
     float t = 0; 
     [SerializeField] float enemySpawnTime;
 
@@ -30,8 +32,9 @@ public class EnemyManager : MonoBehaviour
         if (t > enemySpawnTime)
         {
             t = 0;
-            GameObject e = Instantiate(enemy, new Vector2(-10,0.6f), Quaternion.identity);
+            GameObject e = Instantiate(enemy, new Vector2(-20,0.6f), Quaternion.identity);
             e.transform.parent = enemyMother.transform;
+            e.GetComponent<Enemy>().hp = enemyHp;
         }
 
     }

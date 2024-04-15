@@ -62,7 +62,9 @@ public class Enemy : MonoBehaviour
 
             if (currentTile.isLast)
             {
+                //When arriving the summon circle, destroy and start the level again.
                 Destroy(gameObject);
+                Timer.instance.StartAgain();
             }
             else
             {

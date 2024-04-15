@@ -17,16 +17,16 @@ public class TowerScript : MonoBehaviour
 
     public void InitTower(int _dmg, int _range, int _aoe, int _boost)
     {
-        dmg = _dmg; range = _range; aoe = _aoe; boost = _boost;
+        dmg = _dmg; range = 1+_range; aoe = _aoe; boost = _boost;
         GetComponent<CircleCollider2D>().radius = range/1.5f;
 
         if(dmg == 0 && range == 0 && aoe == 0 && boost == 0)
         {
-            this.gameObject.SetActive(false);
-            return;
+            tile.isEmpty = true;
+            Destroy(this.gameObject);
         }
 
-        //SET SPRITE
+        //SET SPRITEz
         if (dmg>range && dmg > aoe && dmg>boost)
             GetComponent<SpriteRenderer>().sprite = TowerManager.instance.dmg;
         else if (range>aoe && range > boost)
@@ -37,7 +37,6 @@ public class TowerScript : MonoBehaviour
             GetComponent<SpriteRenderer>().sprite = TowerManager.instance.boost;
 
         isInited = true;
-        tile.isEmpty = true;
     }
 
     void Update()
@@ -59,7 +58,7 @@ public class TowerScript : MonoBehaviour
             clone = Instantiate(prefab, transform.position, transform.rotation);
             clone.transform.parent = TowerManager.instance.bulletMother.transform;
             clone.GetComponent<BulletScript>().target = enemies[0];
-            clone.GetComponent<BulletScript>().dmg = dmg;
+            clone.GetComponent<BulletScript>().dmg = dmg+1;
 
             if(aoe > 0)
                 clone.GetComponent<BulletScript>().AOE = aoe;

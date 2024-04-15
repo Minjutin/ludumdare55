@@ -5,7 +5,7 @@ using UnityEngine;
 public class MainCanvas : MonoBehaviour
 {
     public static MainCanvas instance;
-    public TMPro.TextMeshProUGUI resources;
+    public TMPro.TextMeshProUGUI resources, level;
 
     public GameObject SummonMenu;
 
@@ -17,12 +17,17 @@ public class MainCanvas : MonoBehaviour
     // Update is called once per frame
     public void UpdateText()
     {
-        resources.text = "Meat: " + GameManager.instance.resAmount[Resource.Type.Meat] + "\r\nBones: " + GameManager.instance.resAmount[Resource.Type.Bone] + "\r\nPotions: " + GameManager.instance.resAmount[Resource.Type.Potion] + "\r\nPlutonium: " + GameManager.instance.resAmount[Resource.Type.Plutonium];
+        resources.text = GameManager.instance.resAmount[Resource.Type.Meat] + "\r\n" + GameManager.instance.resAmount[Resource.Type.Bone] + "\r\n" + GameManager.instance.resAmount[Resource.Type.Potion] + "\r\n" + GameManager.instance.resAmount[Resource.Type.Plutonium];
     }
 
     public void StartSummoning(TowerScript tower)
     {
         SummonMenu.GetComponent<SummonMenu>().cTower = tower;
         SummonMenu.SetActive(true);
+    }
+
+    public void UpdateLevel(string txt)
+    {
+        level.text = "Level " + txt;
     }
 }

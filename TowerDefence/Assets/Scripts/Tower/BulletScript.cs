@@ -59,7 +59,7 @@ public class BulletScript : MonoBehaviour
     {
         if (collision.gameObject.tag == "Enemy")
         {
-            Debug.Log(collision.gameObject.name);
+            //Debug.Log(collision.gameObject.name);
             AOETargets.Add(collision.gameObject.GetComponent<Enemy>());
         }
     }
